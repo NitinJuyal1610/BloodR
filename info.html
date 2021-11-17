@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Info</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body,
+      html {
+        background-image: linear-gradient(to top, #e32636 20%, #ba0021 80%);
+        margin: 0;
+      }
+
+      #regForm {
+        background-color: #ffffff;
+        margin: 100px auto;
+        font-family: sans-serif;
+        padding: 40px;
+        width: 50%;
+        min-width: 300px;
+
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+      h1 {
+        text-align: center;
+      }
+      input {
+        padding: 10px;
+        width: 100%;
+        font-size: 17px;
+        font-family: sans-serif;
+        border: 1px solid #aaaaaa;
+      }
+      .tab {
+        text-transform: uppercase;
+        align-items: center;
+        font-size: 22px;
+        line-height: 24px;
+        font-weight: bold;
+      }
+      button {
+        background-color: #d32f2f;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: sans-serif;
+        cursor: pointer;
+        transform: translateX(200px);
+      }
+      button:hover {
+        opacity: 0.8;
+      }
+      #prevBtn {
+        background-color: #d32f2f;
+      }
+      /* Make circles that indicate the steps of the form: */
+      .step {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbbbbb;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
+      }
+      .step.active {
+        opacity: 1;
+      }
+      /* Mark the steps that are finished and valid: */
+      .step.finish {
+        background-color: #4caf50;
+      }
+      .caption {
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        font-family: sans-serif;
+        text-align: center;
+        color: #000;
+      }
+      .caption span.heading {
+        background-color: #111;
+        color: #fff;
+        padding: 18px;
+        font-size: 32px;
+        letter-spacing: 10px;
+      }
+
+      #regForm:hover {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+          0 10px 10px rgba(0, 0, 0, 0.22);
+      }
+      div {
+        display: block;
+      }
+
+      .para {
+        font-size: 15px;
+        font-weight: 100;
+        color: #444;
+        text-transform: none;
+      }
+
+      button {
+        transform: translateX(220px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="caption">
+      <span class="heading">Information</span>
+    </div>
+    <div id="regForm" class="card">
+      <div class="tab1 tab">
+        <p style="text-align: center">Why Should You Donate Blood?</p>
+      </div>
+
+      <p class="init1 init para">
+        Several people in the world today die because they do not receive
+        sufficient blood when necessary. By giving blood, every donor helps us
+        meet the challenge of providing life-saving products whenever and
+        wherever they are needed
+      </p>
+      <button class="button1 button">Read More</button>
+    </div>
+
+    <div id="regForm" class="card">
+      <div class="tab2 tab">
+        <p style="text-align: center">Benefit of Blood Donation !</p>
+      </div>
+      <p class="init2 init para">
+        Health benefits of donating blood include good health and reduced risk
+        of cancer and hemochromatosis. It helps in reducing the risk of damage
+        to liver and pancreas. Donating blood may help in improving
+        cardiovascular health and reducing obesity.
+      </p>
+      <button class="button2 button">Read More</button>
+    </div>
+
+    <div id="regForm" class="card">
+      <div class="tab3 tab">
+        <p style="text-align: center">Process of Donation</p>
+      </div>
+      <p class="init3 init para">
+        Donating blood is a simple thing to do, but it can make a big difference
+        in the lives of others. The donation process from the time you arrive
+        until the time you leave takes about an hour. The donation itself is
+        only about 8-10 minutes on average.
+      </p>
+      <button class="button3 button">Read More</button>
+    </div>
+  </body>
+
+  <script>
+    "use strict";
+    const button1 = document.querySelector(".button1");
+    const button2 = document.querySelector(".button2");
+    const button3 = document.querySelector(".button3");
+    button1.addEventListener("click", function () {
+      document.querySelector(".button1").remove();
+      document.querySelector(".init1").remove();
+      var newpara = document.createElement("P");
+
+      newpara.innerHTML +=
+        "1.Safe blood saves lives. Blood is needed by women with complications during pregnancy and childbirth, children with severe anaemia, often resulting from malaria or malnutrition, accident victims and surgical and cancer patients<br/>";
+      newpara.innerHTML +=
+        " 2.There is a constant need for a regular supply of blood because it can be stored only for a limited period of time before use. Regular blood donation by a sufficient number of healthy people is needed to ensure that blood will always be available whenever and wherever it is needed.<br/>";
+      newpara.innerHTML +=
+        "3.Blood is the most precious gift that anyone can give to another person – the gift of life. A decision to donate your blood can save a life, or even several if your blood is separated into its components – red cells, platelets and plasma – which can be used individually for patients with specific conditions.<br/>";
+
+      newpara.className = "para";
+
+      document.querySelector(".tab1").appendChild(newpara);
+    });
+
+    button2.addEventListener("click", function () {
+      button2.remove();
+      document.querySelector(".init2").remove();
+      var newpara = document.createElement("P");
+
+      newpara.innerHTML +=
+        "1.Stimulates Blood Cell Production<br/> 2.Blood Donation helps to reduce risk of heart attack and cancer<br/>3.Donation of blood, burns calories & helps in weight loss<br/>4.Blood donation helps to maintain healthy liver<br/>";
+      newpara.innerHTML +=
+        "5.Prevents Hemochromatosis and helps to maintain iron level<br/>6. By donating blood you can save someone's life<br/>7.It helps you to complete your social responsibilities<br/>";
+      newpara.className = "para";
+      console.log(newpara);
+      document.querySelector(".tab2").appendChild(newpara);
+    });
+
+    button3.addEventListener("click", function () {
+      document.querySelector(".button3").remove();
+      document.querySelector(".init3").remove();
+      var newpara = document.createElement("P");
+
+      newpara.innerHTML +=
+        "The blood donation process can be broken down into four steps:<br/>1.<b>Medical history and mini-physical</b><br/>2.<b>Donation</b><br/>3.<b>Refreshments</b><br/>";
+      newpara.innerHTML +=
+        "<b> Medical history and mini-physical</b>:<br/> Before you donate, an employee from the blood bank will ask you some confidential questions about your health and lifestyle. You’ll also get a short health exam or “mini-physical.” An employee will take your pulse, blood pressure, and temperature, and take a small amount of blood for testing.<br/>";
+      newpara.innerHTML +=
+        "<b>Donation</b>:<br/>During the process of donating blood, a healthcare provider will:<br/> *Clean the donor’s arm with an alcohol pad.<br/>*Insert a new and sterile needle into a vein. <br/>*Attach the needle to collection equipment, consisting of tubing and a bag. <br/>*Allow the blood to flow into the bag until it is full. <br/>*The person will donate one unit of blood, and this will take 6–10 minutes. <br/>*The whole process will take around 45–60 minutes.<br/>";
+      newpara.innerHTML +=
+        "<b>Refreshments</b>:<br/>*After you’re finished, you’ll be given snacks and a drink to help your body get back to normal since you lost some fluids. You’ll want to sit and relax for at least 10 minutes to restore your strength and get some energy back before you leave.";
+
+      newpara.className = "para";
+
+      document.querySelector(".tab3").appendChild(newpara);
+    });
+  </script>
+</html>
